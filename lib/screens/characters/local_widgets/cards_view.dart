@@ -21,7 +21,7 @@ Future cardView(BuildContext context, List character, int index) {
                 child: Text.rich(
                   TextSpan(text: 'Nombre: ' + character[index].name),
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 19,
                     color: cardTheme,
                   ),
                 ),
@@ -120,7 +120,9 @@ Future cardView(BuildContext context, List character, int index) {
                             contentPadding:
                                 EdgeInsets.only(left: 20.0, bottom: 8.0),
                             title: Text(
-                              element.replaceAll(r'https://rickandmortyapi.com/api/episode/', 'Episodio: '),
+                              element.replaceAll(
+                                  r'https://rickandmortyapi.com/api/episode/',
+                                  'Episodio: '),
                               style: TextStyle(color: cardTheme),
                             ),
                             onTap: () => launch(element),

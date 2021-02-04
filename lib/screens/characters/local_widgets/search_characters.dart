@@ -1,16 +1,16 @@
 //Flutter
 import 'package:flutter/material.dart';
 
-class Search extends StatefulWidget {
+class SearchCharacters extends StatefulWidget {
   final size;
 
-  Search({this.size});
+  SearchCharacters({this.size});
 
   @override
-  _SearchState createState() => _SearchState();
+  _SearchCharactersState createState() => _SearchCharactersState();
 }
 
-class _SearchState extends State<Search> {
+class _SearchCharactersState extends State<SearchCharacters> {
   final _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {

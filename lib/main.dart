@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 //App routes
-import 'package:rick_and_morty_app/widgets/home.dart';
+import 'package:rick_and_morty_app/screens/home/home.dart';
 
 //App utils
 import 'package:rick_and_morty_app/utils/routes.dart';
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   static String id = 'Rick And Morty App';
   @override
   Widget build(BuildContext context) {
+    print('Main: build');
     return MaterialApp(
       title: id,
       theme: ThemeData(

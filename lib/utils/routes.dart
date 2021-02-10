@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 
 //App routes
-import 'package:rick_and_morty_app/widgets/home.dart';
-import 'package:rick_and_morty_app/screens/episodes/episodes_home.dart';
+import 'package:rick_and_morty_app/screens/home/home.dart';
+import 'package:rick_and_morty_app/screens/episodes/episodes_screen.dart';
 import 'package:rick_and_morty_app/screens/characters/characters_screen.dart';
-import 'package:rick_and_morty_app/screens/graphql_playground/graphql_home.dart';
+import 'package:rick_and_morty_app/screens/graphql_playground/graphql_screen.dart';
 
 Map<String, WidgetBuilder> applicationRoutes() {
   final routes = {

@@ -1,23 +1,17 @@
 //Flutter
 import 'package:flutter/material.dart';
-
-//Local widgets
 import 'package:rick_and_morty_app/widgets/cards.dart';
 
-class CharactersHome extends StatefulWidget {
-  static String id = 'Characters';
+class EpisodesHome extends StatefulWidget {
+  static String id = 'Episodes';
   final size;
-
-  const CharactersHome({Key key, this.size}) : super(key: key);
+  const EpisodesHome({Key key, this.size}) : super(key: key);
 
   @override
-  _CharactersHome createState() {
-    print('Characters screen: createS');
-    return _CharactersHome();
-  }
+  _EpisodesHomeState createState() => _EpisodesHomeState();
 }
 
-class _CharactersHome extends State<CharactersHome> {
+class _EpisodesHomeState extends State<EpisodesHome> {
   double _xOffset;
   double _yOffset;
   double _scaleFactor;
@@ -27,7 +21,6 @@ class _CharactersHome extends State<CharactersHome> {
   @override
   void initState() {
     super.initState();
-    print('Characters screen: init');
     _xOffset = 0;
     _yOffset = 0;
     _scaleFactor = 1.0;
@@ -35,9 +28,9 @@ class _CharactersHome extends State<CharactersHome> {
     _isDrawerOpen = false;
   }
 
-  void _scaleFactorUpdate(DragUpdateDetails details, Size size) {
+  void scaleFactorUpdate(DragUpdateDetails details, Size size) {
     _xOffset = details.globalPosition.dx;
-    _yOffset = details.globalPosition.dx / 2 + 20;
+    _yOffset = details.globalPosition.dx / 2;
     _scaleFactor = details.globalPosition.direction - 0.4;
     _border = 40;
   }
@@ -45,8 +38,8 @@ class _CharactersHome extends State<CharactersHome> {
   void drawerState(bool _isDrawerOpen, Size size) {
     if (_isDrawerOpen) {
       _xOffset = size.width * 0.5;
-      _yOffset = size.width * 0.5 / 2 + 20;
-      _scaleFactor = 0.8;
+      _yOffset = size.width * 0.5 / 2;
+      _scaleFactor = 0.7;
     } else {
       _xOffset = 0;
       _yOffset = 0;
@@ -58,13 +51,12 @@ class _CharactersHome extends State<CharactersHome> {
   @override
   void deactivate() {
     // TODO: implement deactivate
-    print('Characters screen: deactivated');
+    print('EpisodesHome screen: deactivated');
     super.deactivate();
   }
 
   @override
   Widget build(BuildContext context) {
-    print('Characters screen: build');
     return AnimatedContainer(
       decoration: BoxDecoration(
           color: Colors.white,
@@ -86,7 +78,7 @@ class _CharactersHome extends State<CharactersHome> {
         onHorizontalDragUpdate: (DragUpdateDetails details) {
           if (details.globalPosition.dx <= widget.size.width * 0.5) {
             setState(() {
-              _scaleFactorUpdate(details, widget.size);
+              scaleFactorUpdate(details, widget.size);
             });
           }
         },
@@ -104,7 +96,7 @@ class _CharactersHome extends State<CharactersHome> {
           children: [
             Expanded(
                 child: Cards(
-              path: 'character',
+              path: 'episode',
               size: widget.size,
             ))
           ],

@@ -1,19 +1,21 @@
+//Flutter
 import 'package:flutter/material.dart';
 
 //App
 import 'package:rick_and_morty_app/widgets/search.dart';
 import 'package:rick_and_morty_app/widgets/drawer_screen.dart';
+import 'package:rick_and_morty_app/screens/characters/characters_screen.dart';
 
-//Local widgets
-import 'local_widgets/episodes_screen.dart';
+class Home extends StatelessWidget {
+  static String id = 'Home';
+  final page;
 
-class EpisodesHome extends StatelessWidget {
-  static String id = 'Episodes';
-  final size;
-  const EpisodesHome({Key key, this.size}) : super(key: key);
+  Home({this.page});
 
   @override
   Widget build(BuildContext context) {
+    print('home: build');
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -24,10 +26,13 @@ class EpisodesHome extends StatelessWidget {
       extendBodyBehindAppBar: true,
       body: Stack(
         children: [
-          DrawerScreen(),
-          Episodes(
+          DrawerScreen(
             size: size,
           ),
+          page ??
+              CharactersHome(
+                size: size,
+              ),
         ],
       ),
     );

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class GraphQLPlaygroundScreen extends StatefulWidget {
+class GraphQLHome extends StatefulWidget {
+  static String id = 'GraphQL Home';
   final size;
-  const GraphQLPlaygroundScreen({Key key, this.size}) : super(key: key);
+  const GraphQLHome({Key key, this.size}) : super(key: key);
   @override
-  _GraphQLPlaygroundScreenState createState() =>
-      _GraphQLPlaygroundScreenState();
+  _GraphQLHomeState createState() => _GraphQLHomeState();
 }
 
-class _GraphQLPlaygroundScreenState extends State<GraphQLPlaygroundScreen> {
+class _GraphQLHomeState extends State<GraphQLHome> {
   double xOffset;
   double yOffset;
   double scaleFactor;
